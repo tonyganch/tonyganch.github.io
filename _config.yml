@@ -1,2 +1,4 @@
-name: Your New Jekyll Site
+name: Tony Ganch
 pygments: true
+permalink: /:categories/:title
+markdown: kramdown
