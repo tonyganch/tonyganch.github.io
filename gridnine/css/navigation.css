@@ -1,0 +1,55 @@
+/**
+ * Заголовок и навигация по шагам
+ * @author Sergey Bochkarev
+ * @created 2013-03-07 10:25:00
+ */
+
+/*--------------------*/
+/* Заголовок */
+#header {
+    padding: 18px 0 0;
+}
+#header h1 {
+    color: #4686c4;
+    font-weight: bold;
+}
+
+/*--------------------*/
+/* основная навигация */
+#nav {
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-width: 640px;
+}
+
+#nav ul {
+    display: block;
+    overflow: hidden;
+}
+/* элемент навигации */
+#nav ul li {
+    display: block;
+    float: left;
+    padding: 0;
+}
+/* якорь */
+#nav ul li a {
+    display: block;
+    color: #f1f1f1;
+    text-decoration: none;
+    border: 2px solid #f1f1f1;
+    padding: 7px 18px;
+}
+/* текущее положение */
+#nav ul li a.active {
+    color: #e24201;
+    border-color: #ff5e1d;
+}
+/* стрелочка */
+#nav ul li.row {
+    background: url('../img/icons.png') 8px -128px no-repeat;
+    width: 48px;
+    height: 32px;
+}
+

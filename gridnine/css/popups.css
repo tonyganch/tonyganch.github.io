@@ -1,0 +1,130 @@
+div.popup-dialog {
+    background: #f4f4f4;
+    border: 1px solid #b7b7b7;
+    box-shadow: 0 0 2px 1px #b7b7b7;
+    position: absolute;
+    display: none;
+    font-size: 14px;
+    z-index: 102;
+    min-width: 410px;
+}
+
+div.popup-dialog .ui-dialog-content {
+    overflow: inherit;
+}
+
+div.popup-dialog form {
+    padding: 0 !important;
+}
+
+div.popup-dialog form fieldset {
+    float: none;
+    margin-bottom:10px;
+}
+
+div.popup-dialog form div.field input[type="text"] {
+    width: 200px !important;
+}
+
+div.center {
+    padding: 20px 20px 37px;
+}
+
+div.popup-dialog div.ui-widget-content a {
+    color: #0774c1;
+    text-decoration: none;
+    border-bottom: 1px solid #0774c1;
+}
+
+div.popup-dialog p {
+    margin-bottom: 4px;
+}
+
+div.popup-dialog span {
+    display: inline-block;
+}
+
+div.popup-dialog div.icon-dialog {
+    padding: 15px 0 26px;
+    text-align: center;
+}
+
+div.popup-dialog div.icon-dialog img {
+    display: inline;
+}
+
+div.popup-dialog .wait {
+    color: #00649f;
+    font-size: 18px;
+}
+
+div.popup-dialog .success {
+    color: #00943c;
+    font-size: 18px;
+}
+
+div.popup-dialog .detail {
+    padding: 15px 0 0;
+    color: #808080;
+    font-size: 12px;
+}
+div.popup-dialog .detail p {
+    margin-bottom: 4px;
+}
+div.popup-dialog .detail .id-reserved {
+    color: #404040;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+div.popup-dialog .error {
+    color: #ff3333;
+    font-size: 18px;
+}
+
+div.popup-dialog div.buttons {
+    text-align: center;
+    padding: 33px 0 26px;
+}
+
+div.popup-dialog div.buttons a, div.popup-dialog form input[type=submit] {
+    font-size: 14px;
+    background: #ff5e1d;
+    color: #ffffff;
+    padding: 6px 11px 7px 10px;
+    text-decoration: none;
+    border-bottom: 0 none;
+}
+
+div.popup-dialog h1 {
+    color: #282828;
+    background: #ebebeb;
+    position: relative;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+div.popup-dialog h1 a.icon.close {
+    border-bottom: 0 none;
+}
+
+div.popup-dialog form {
+    padding: 30px;
+}
+
+div.fare-remarks-container div.fare-remarks-content {
+    overflow: auto;
+    max-height: 80%;
+}
+
+div.fare-remarks-container  h1 {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+}
+div.fare-remarks-container p {
+    margin-bottom: 5px;
+    font-size: 12px;
+    line-height: 16px;
+}

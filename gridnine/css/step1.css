@@ -1,0 +1,71 @@
+form fieldset div.field {
+    box-sizing: border-box;
+    margin-right: 0;
+    padding-right: 30px;
+    }
+form fieldset {
+    margin-right: -30px;
+    }
+fieldset.separator-line {
+    margin-bottom: 10px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+form fieldset div.field input[type=text] {
+    box-sizing: border-box;
+    height: 28px;
+    }
+form fieldset div.field select {
+    width: 100%;
+    }
+.expanded-50 {
+    width: 50%;
+    }
+.justify {
+    text-align: justify;
+    }
+.justify span {
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    }
+.justify label {
+    line-height: 28px;
+    }
+form fieldset div.field .justify label {
+    display: inline;
+    text-align: left;
+    }
+select {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 3px 35px 3px 5px;
+    height: 28px;
+    border: 1px solid #dedede;
+    border-top-color: #b2b2b2;
+    border-radius: 0;
+    background: #ffffff url(../img/icons/drop-down.png) right top no-repeat;
+    color: #262626;
+    font-size: 14px;
+    line-height: 16px;
+    -webkit-appearance: none;
+}
+.select-field {
+    margin-bottom: 15px;
+    }
+.select-field > * {
+    margin-right: 10px;
+    }
+.dashed-underline_red {
+    border-bottom: 1px dashed #e24201;
+    color: #e24201;
+    text-decoration: none;
+    cursor: pointer;
+    }
+.hotel-form input[type="submit"] {
+    margin-right: 20px;
+    }
+.hotel-form {
+    padding: 0;
+    max-width: 800px;
+    }

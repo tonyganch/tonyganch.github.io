@@ -1,0 +1,253 @@
+/**
+ * @author Sergey Bochkarev
+ * @created 2013-03-07 10:25:00
+ */
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: black;
+    background: white;
+}
+
+#App_structure {
+    min-height: 100%;
+}
+#App_header {
+    height: 139px;
+    overflow: hidden;
+    width: 100%;
+}
+#App_leftSidebar {
+    float: left;
+    height: 350px;
+    overflow: hidden;
+    width: 178px;
+}
+
+#App_main {
+    margin: 0 0 0 178px;
+    padding-bottom: 97px;
+}
+
+#App_footer {
+    clear: both;
+    margin-top: -87px;
+    height: 87px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.center {
+    text-align: center;
+    margin: 0 auto;
+}
+img {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+/* Очистка после float */
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    font-size: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.separator-line {
+    border-top: 1px solid #e7e7e7;
+}
+
+div.separator-line {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Цвет корпорации */
+.corporate {
+    background-color: #f2e65b !important;
+}
+/* Внимание */
+.warning {
+    color: #ff3131 !important;
+}
+
+.sort-asc {
+    background-image: url(../img/icons/sort.asc.png);
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+}
+
+.sort-desc {
+    background-image: url(../img/icons/sort.desc.png);
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+}
+
+/*--------------------*/
+/* underlined */
+/*--------------------*/
+/* underlined */
+a.dashed-underline {
+    text-decoration: none;
+    border-bottom: 1px dashed #0774c1;
+}
+
+.dashed-underline {
+    border-bottom-style: dashed !important;
+}
+
+
+/* последний элемент без отступа */
+.last {
+    margin-right: 0 !important;
+}
+
+/* Стандартные размеры */
+.span-18 {
+    width: 18px;
+}
+
+.span-20 {
+    width: 20px;
+}
+
+.span-22 {
+    width: 22px;
+}
+
+.span-40 {
+    width: 40px;
+}
+
+.span-70 {
+    width: 70px;
+}
+
+.span-110 {
+    width: 110px;
+}
+
+.span-130 {
+    width: 130px;
+}
+
+
+/* расширяемые элементы */
+.expanded-15 {
+    width: 15%;
+}
+
+.expanded-20 {
+    width: 20%;
+}
+
+.expanded-25 {
+    width: 25%;
+}
+
+.expanded-35 {
+    width: 35%;
+}
+
+.expanded-100 {
+    width: 100%;
+}
+
+
+/* минимальные размеры */
+
+
+.minwidth-30 {
+    min-width: 30px;
+}
+
+.minwidth-110 {
+    min-width: 110px;
+}
+
+.minwidth-150 {
+    min-width: 150px;
+}
+
+/* Loader */
+#loader {
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color:#000;
+    opacity:.2;
+    filter:alpha(opacity=20);
+    z-index:9998;
+}
+#imgloader {
+    position:fixed;
+    display:block;
+    top:50%;
+    margin-top:-40px;
+    left:50%;
+    margin-left:-40px;
+    z-index:9999
+}
+
+/* jQueryUI */
+
+/* UI.Dialog */
+.ui-dialog-untitled .ui-dialog-titlebar { display:none; }
+.ui-dialog-fatal .ui-dialog-titlebar-close { display:none; }
+
+/* UI.Autocomplete */
+.ui-autocomplete .ui-menuitem-html {
+    display:block;
+    overflow:hidden;
+    color:#e24100;
+}
+.ui-autocomplete .ui-state-focus .ui-menuitem-html { color:#fff; }
+
+.ui-autocomplete .ui-menuitem-html .country { color:#999; }
+.ui-autocomplete .ui-state-focus .ui-menuitem-html .country { color:#fff; }
+
+.ui-autocomplete .ui-menuitem-html .iata { float:right; padding-left:10px; color:#999; }
+.ui-autocomplete .ui-state-focus .ui-menuitem-html .iata { color: #fff; }
+
+.ui-autocomplete .ui-menuitem-html .airport { padding-left:10px; }
+
+.placeholder { color: #aaa; }
+
+a.ui-button.cross-close {
+    font-size:18px;
+    position:absolute;
+    right:0;
+    top:4px;
+    text-decoration:none;
+    color:#666;
+    outline:none;
+}
+
+a.ui-button.cross-close:hover {
+    color:#000;
+}
+
+
+div.udids-container form {
+    padding: 0;
+    margin: 0;
+}
+
+div.udids-container table {
+    width: 75%;
+}

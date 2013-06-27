@@ -1,0 +1,160 @@
+/**
+ * Форма фильтра и так далее...вавыаыв
+ * @author Sergey Bochkarev
+ * @created 2013-03-07 10:25:00
+ */
+
+/* checkbox */
+.filter-panel .checkbox-container div.checkbox,
+.filter-panel .checkbox-container > label,
+.filter-panel .radio-container > label {
+    display: block;
+    overflow: hidden;
+    padding: 6px 10px 2px;
+}
+
+.filter-panel .checkbox-container .checkbox input,
+.filter-panel .checkbox-container > label input,
+.filter-panel .radio-container > label input{
+    display: block;
+    float: left;
+    height: 13px;
+    margin: 0 7px 2px -1px;
+    float: left;
+    padding: 0;
+    width: 13px;
+}
+
+.filter-panel .checkbox-container .checkbox label,
+.filter-panel .checkbox-container > label div,
+.filter-panel .radio-container > label div {
+    display: block;
+    margin: -3px 16px 0 22px !important;
+    line-height: 18px;
+    width: auto;
+}
+
+
+/* -------------------- */
+/* Фильтры              */
+.filter-panel {
+    float: right;
+    color: #585858;
+    width: 176px;
+    border-left: 2px solid #dedede;
+    border-right: 2px solid #dedede;
+    border-bottom: 2px solid #dedede;
+    margin: 0 8px 0 0;
+}
+
+.filter-panel .filter {
+    border-top: 2px solid #dedede;
+    font-size: 12px;
+    padding-bottom: 5px;
+}
+
+.filter-panel .filter h1 {
+    color: #f05110;
+    background: #eeeeee;
+    font-weight: bold;
+    padding: 9px;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.filter.time-filter h1 {
+}
+
+.filter.time-filter dl {
+    margin: 8px 10px 5px;
+}
+
+.filter.time-filter dl dd {
+    display: block;
+    line-height: 20px;
+    clear: both;
+}
+
+.filter.time-filter dl dd.border-line {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 5px;
+}
+
+.filter.time-filter dl dd span.value {
+    float: right;
+    color: #0774c1;
+    border-bottom: 1px dashed #77b3dd;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+
+/* ---------------- */
+/* Форма в фильтрах */
+
+.filter-panel form {
+    padding: 0;
+    margin: 0;
+}
+
+.filter-panel div.container {
+    display: none;
+    background: #ffffff;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.filter-panel p.filter-company-more {
+    margin: 6px 0 8px 32px;
+}
+
+.filter-panel fieldset div.radio input[type="radio"] {
+    float: left;
+    margin-left: 7px;
+}
+
+.filter-panel fieldset div.radio label {
+    font-size: 12px;
+    margin: 2px 10px 1px 29px;
+    padding: 1px 2px 3px 1px;
+}
+
+.filter-panel fieldset div.radio a.icon {
+    top: -4px;
+    left: 1px;
+}
+
+.filter-panel fieldset div.radio.checked {
+    background: #ffffff;
+}
+
+.filter-panel fieldset label span.corporate {
+    padding: 3px 30px 3px 4px;
+    margin-left: -4px;
+}
+
+.filter-panel fieldset div.radio.checked label {
+    color: #585858;
+}
+
+/* выбор времени */
+div.time-selector-container {
+    position: absolute;
+    border: 1px solid #b7b7b7;
+    box-shadow: 0 0 2px 1px #d9d9d9;
+    background: #f4f4f4;
+    padding: 15px;
+}
+
+div.time-selector-container div.time-selector {
+    float: none;
+    white-space: nowrap;
+    margin-bottom: 8px;
+}
+div.time-selector-container .info {
+    font-size: 11px;
+    font-style: italic;
+    color: #262626;
+}

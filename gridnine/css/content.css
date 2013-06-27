@@ -1,0 +1,663 @@
+/**
+ * Содержание шага: плашки табов, табы, панель фильтров
+ * Результат поиска
+ * @author Sergey Bochkarev
+ * @created 2013-03-07 10:25:00
+ */
+
+div.page-container {
+    padding: 10px 0;
+    min-width: 640px;
+    /* float hack not work */
+    /* overflow: hidden; */
+}
+
+/*--------------------*/
+/* Табы */
+div#tabs ul.tabs {
+    display: block;
+    height: 36px;
+    border-bottom: 1px solid #d0d0d0;
+    min-width: 710px;
+    margin-right: 10px;
+}
+
+div#tabs div.tabs-container {
+    min-width: 710px;
+}
+
+div#tabs ul.tabs li {
+    display: block;
+    float: left;
+    margin-right: 9px;
+    background: #f4f4f4;
+    border-top: 2px solid #f4f4f4;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+div#tabs ul.tabs li.active {
+    background: #ffffff;
+    border-top: 2px solid #ff5e1d;
+    border-bottom: 1px solid #ffffff;
+}
+
+div#tabs ul.tabs li span {
+    display: block;
+    color: #0774c1;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    padding: 10px 20px 10px;
+    cursor: pointer;
+}
+
+div#tabs ul.tabs li.active span {
+    color: #da4f16;
+    border-left: 1px solid #d0d0d0;
+    border-right: 1px solid #d0d0d0;
+}
+
+div#tabs div.tab {
+    display: none;
+}
+
+div#tabs div.tab.active {
+    display: block;
+}
+
+.title {
+    color: #ff5e1d;
+}
+
+table p.title {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 19px;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+table tr.header th {
+    color: #808080;
+    background: #f4f4f4;
+    font-size: 12px;
+    border-top: 1px solid #ff5e1d;
+    padding: 8px 0 9px 9px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+/*------------------------*/
+/* Поиск                  */
+
+table hr {
+    display: block;
+    height: 4px;
+    border: 0 none;
+    border-bottom: 1px solid #dedede;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+}
+
+/* Параметры поиска */
+div.search-results-container {
+    margin-right: 204px;
+}
+
+div.search-params {
+    background: #eeeeee;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+div.search-params a {
+    color: #0774c1;
+    font-size: 14px;
+}
+
+div.search-params div.reset {
+    float: right;
+}
+
+div.search-params div.details p {
+    font-size: 18px;
+    line-height: 24px;
+    color: #2a2a2a;
+}
+
+div.search-params div.details a {
+    font-size: 12px;
+}
+
+/* результат поиска */
+table.search-results {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table.search-results thead th {
+    padding: 2px 10px 5px 0;
+    text-align: left;
+    vertical-align: top;
+    width: 20%;
+}
+
+table.search-results thead th.icons {
+    width: 16px;
+}
+
+table.search-results thead td {
+    padding: 0 10px 0 0;
+    text-align: left;
+    vertical-align: top;
+}
+
+table.search-results thead .last-child {
+    padding-right: 0 !important;
+}
+
+/* header */
+table.search-results thead th span {
+    display: inline-block;
+}
+
+table.search-results thead td hr {
+    height: 0;
+    border-bottom: 2px solid #dedede;
+}
+
+table.search-results thead th a,
+table.search-results thead th span {
+    color: #0774c1;
+    font-size: 12px;
+    line-height: 15px;
+    text-decoration: none;
+    border-bottom: 1px dashed #7ab4d4;
+}
+
+table.search-results thead th div.sort-asc,
+table.search-results thead th div.sort-desc {
+    background-color: #edf5e8;
+    padding: 2px 10px 4px 26px;
+    margin-top: -2px;
+    margin-bottom: -3px;
+}
+
+/* результаты */
+table.search-results tbody td {
+    color: #808080;
+    font-weight: 100;
+    text-align: left;
+    padding: 10px 10px 0 0;
+    vertical-align: top;
+}
+
+div.cost {
+    color: #0774c1;
+    background: #f4f4f4;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+div.cost .currency {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/* кнопка выбора */
+table.search-results a.choose {
+    display: block;
+    color: #ffffff;
+    background: #ff5e1d;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    padding: 7px 0;
+    margin: 15px 0 0;
+}
+
+/* большие черные буквы */
+table.search-results .mark {
+    color: #404040;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+table.search-results .info {
+    color: #808080;
+    font-weight: normal;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+table.search-results .code {
+    font-weight: bold;
+}
+
+table.search-results p {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+table.search-results p a {
+    color: #0774c1;
+    font-size: 12px;
+    line-height: 18px;
+    text-decoration: none;
+    border-bottom: 1px dashed #83b9e0;
+}
+
+/* информация о пересадках */
+table.search-results div.transfer {
+    font-size: 12px;
+}
+
+table.search-results div.transfer div {
+    float: left;
+    padding: 1px 10px 2px 5px;
+}
+
+table.search-results div.transfer .transfer-airport-in {
+    color: #ffffff;
+    background: #d28feb;
+}
+
+table.search-results div.transfer .transfer-airport-out {
+    color: #ffffff;
+    background: #6ac68f;
+}
+
+/* корпоративные цены */
+div.corporate-container {
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+div.corporate-container .corporateicon {
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+div.corporate-container .corporateicon img {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+div.corporate-container .corporate {
+    float: left;
+    color: #616161;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 1px 10px 2px 5px;
+    margin: 0 2px;
+    white-space: nowrap;
+}
+
+/* кнопка подгрзки данных */
+#search-lazy-load {
+    position: relative;
+    margin-top: 35px;
+    border-top: 1px solid #dedede;
+}
+
+#search-lazy-load div {
+    position: relative;
+    display: inline-block;
+    background: #ffffff;
+    top: -10px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+#search-lazy-load a {
+    color: #0774c1;
+    font-size: 14px;
+}
+
+/* выбор билета */
+div.choose-container {
+    padding: 3px 5px !important;
+    background: #f4f4f4 !important;
+}
+
+div.choose-container.ui-dialog .ui-dialog-content {
+    overflow: inherit;
+}
+
+div.choose-container form {
+    padding: 0;
+}
+
+div.choose-container form div.icon-container {
+    width: 111px;
+
+}
+
+div.choose-container form .dropdown-select {
+    width: 297px;
+    padding-right: 18px;
+}
+
+#reason_selector, ul.fixed-values-menu {
+    position: absolute;
+}
+
+.dropdown-select input[type="text"] {
+    color: #262626;
+    font-size: 14px;
+    line-height: 16px;
+    border: 1px solid #dedede;
+    border-top-color: #b2b2b2;
+    padding: 2px 8px;
+    width: 100%;
+    background: #ffffff url(../img/icons/drop-down.png) right top no-repeat;
+}
+div.udids-container form b {
+    font-weight: inherit;
+    display: inline-block;
+}
+div.udids-container form input[type="text"],
+div.udids-container form div.dropdown-select {
+    width: 90%;
+}
+
+div.choose-container form input[type="submit"] {
+    font-size: 14px;
+    line-height: 18px;
+    border: 0;
+    padding: 4px 10px 4px;
+}
+
+table.choose-table td {
+    padding: 0 20px 0 0;
+    vertical-align: top;
+    text-align: left;
+}
+
+table.choose-table .last-child {
+    padding-right: 0 !important;
+}
+
+table.choose-table p {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 14px;
+    margin: 0;
+    padding: 10px 0 0;
+}
+
+table.choose-table p.title {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding: 0;
+}
+
+table.choose-table p span {
+    font-weight: bold;
+}
+
+table.choose-table p.description {
+    color: #7d7d7d;
+    font-style: italic;
+    padding: 0;
+}
+
+table.choose-table tr.header th {
+    font-style: italic;
+    color: #7d7d7d;
+    background: #ebebeb;
+    padding: 5px 30px 5px 0;
+    text-align: right;
+}
+
+table.choose-table a.show-alternative {
+    display: block;
+    color: #ffffff;
+    background: #ff5e1d;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    padding: 7px 0;
+    margin: 15px 0 0;
+}
+
+table.choose-table .cost {
+    margin-bottom: 2px;
+}
+
+/* Бронирование */
+.reservation-container {
+    margin: 0 8px 0 0;
+}
+
+table.reservation {
+    border-spacing: 0;
+    border-collapse: collapse;
+    font-size: 14px;
+    line-height: 16px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+table.reservation thead {
+    background: #4686c4;
+}
+
+table.reservation th {
+    color: #ffffff;
+    font-weight: bold;
+    text-align: left;
+    padding: 9px 30px 8px 0;
+}
+
+table.reservation td {
+    padding: 16px 30px 0 0;
+    color: #404040;
+    font-weight: 100;
+    text-align: left;
+}
+
+table.reservation .mark {
+    color: #404040;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+    margin: 0 0 2px 0;
+}
+
+table.reservation .info {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+table.reservation .code {
+    font-weight: bold;
+}
+
+table.reservation p {
+    font-size: 14px;
+    line-height: 19px;
+    margin-left: 1px;
+}
+
+/* информация о пересадках */
+div.transfer-container {
+    margin-top: 3px;
+}
+
+table.reservation div.transfer {
+    font-size: 14px;
+    overflow: hidden;
+    padding: 0 0 0 1px;
+    z-index: 1;
+}
+
+table.reservation div.transfer div {
+    float: left;
+    padding: 1px 10px 3px 5px;
+}
+
+table.reservation div.transfer .transfer-airport-in {
+    color: #ffffff;
+    background: #d28feb;
+}
+
+table.reservation div.transfer .transfer-airport-out {
+    color: #ffffff;
+    background: #6ac68f;
+}
+
+table.reservation a {
+    color: #0774c1;
+    font-size: 12px;
+}
+
+/* Персональные данные */
+table.personal-data {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+table.personal-data tr.data td {
+    color: #404040;
+    background: #f4f4f4;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding: 6px 10px 7px;
+}
+
+table.personal-data tr.data td a {
+    color: #0774c1;
+    line-height: 18px;
+}
+
+table.personal-data tr.separator td {
+    height: 2px;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+table.personal-data tr.error-container td {
+    padding: 6px 0 0;
+    min-height: 18px;
+}
+
+div.additional-personal {
+    overflow: hidden;
+}
+
+div.additional-personal div {
+    float: left;
+    width: 49%;
+}
+
+div.additional-personal div.left {
+    margin-right: 1%;
+}
+
+div.additional-personal div.right {
+    margin-left: 1%;
+}
+
+div.resume {
+    border: 2px solid #e4e4e4;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+div.resume div.total {
+    float: left;
+    padding: 25px 0 0 38px;
+    width: 228px;
+}
+
+div.resume div.accept {
+    border-left: 2px solid #E4E4E4;
+    margin-left: 308px;
+    padding: 6px 20px;
+}
+
+div.resume div.total .corporate-container {
+    padding-left: 2px;
+}
+
+div.resume div.total p {
+    color: #404040;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 13px 1px 21px;
+}
+
+div.resume div.cost {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #404040;
+    font-size: 48px;
+    padding: 0;
+    text-align: left;
+}
+
+div.resume div.cost .currency {
+    font-size: 18px;
+    margin-left: -7px;
+}
+
+div.resume  .title {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 20px;
+    padding: 0;
+    margin-bottom: 34px;
+}
+
+div.resume .checkbox-container {
+    font-size: 12px;
+    margin-bottom: 17px;
+    margin-right: 0;
+}
+
+div.resume .checkbox-container .checkbox {
+    overflow: hidden;
+    padding: 7px 10px 2px;
+}
+
+div.resume .checkbox-container .checkbox label {
+    margin-top: -4px !important;
+    margin-left: -14px !important;
+}
+
+div.resume form input[type="submit"] {
+    font-size: 14px;
+    padding: 9px 15px 11px 14px;
+    margin-left: 1px;
+    line-height: 16px;
+}
+
+div.resume form span {
+    display: inline-block;
+}
+
+div.resume form span.hide {
+    display: none;
+}
+
+div.resume form a {
+    color: #0774c1;
+    font-size: 14px;
+    text-decoration: none;
+    border-bottom: 1px solid #0774c1;
+    line-height: 16px;
+}

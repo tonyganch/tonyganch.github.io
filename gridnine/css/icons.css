@@ -1,0 +1,78 @@
+/**
+ * Иконки
+ */
+
+/* Контейнер для иконок */
+.icon-container {
+    position: relative;
+}
+
+/* Иконки */
+.icon {
+    display: block;
+    position: absolute;
+    color: transparent;
+    background: url(../img/icons.png) transparent;
+    width: 16px;
+    height: 16px;
+    border: 0 none;
+    text-decoration: none;
+}
+
+/* Иконка даты */
+.icon.date {
+    top: 33px;
+    right: 0;
+    background-position: -8px -8px;
+}
+/* картинка радиобаттона */
+.icon.radio {
+    top: -1px;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background-position: -32px 0;
+}
+/* радиобаттон можно кликать и на лейбе */
+.radio label {
+    cursor: pointer;
+}
+
+/* картинка радиобаттона */
+.icon.plus {
+    top: 0;
+    left: 0;
+    background-position: -101px -5px;
+    width: 23px;
+    height: 23px;
+}
+/* плюсик */
+.plus-container {
+    margin-left: 28px;
+    line-height: 22px;
+}
+
+.icon.arrow {
+    background: url("../img/icons.png") no-repeat scroll 8px -136px transparent;
+    height: 16px;
+    width: 16px;
+}
+
+.icon.bigarrow {
+    background: url("../img/icons.png") no-repeat scroll 0px -96px transparent;
+    height: 32px;
+    width: 32px;
+}
+
+.icon.close {
+    top: 0;
+    right: 0;
+    background-position: 0 -32px;
+    height: 32px;
+    width: 32px;
+}
+
+.flight-direction-icon {
+    width: 16px;
+    height: 16px;
+}
