@@ -77,11 +77,13 @@ form fieldset div.field .justify label {
 .select-field > * {
     margin-right: 10px;
     }
+.field .dropdown-select {
+    width: 100%;
+    }
 .dropdown-select {
     position: relative;
     display: inline-block;
     width: 200px;
-    max-width: 100%;
     vertical-align: middle;
     }
 .dropdown-select input[type="text"] {
@@ -150,7 +152,7 @@ form fieldset div.field .justify label {
 .hotel-search-city {
     position: relative;
     left: -25px;
-    color: #666;
+    color: #888;
     font-size: 12px;
     }
 .hotel-search-map {
@@ -164,10 +166,11 @@ form fieldset div.field .justify label {
     }
 .input-dashed[type="text"] {
     box-sizing: border-box;
-    padding: 3px 35px 3px 5px;
+    padding: 3px 25px 3px 5px;
+    width: 290px;
     height: 28px;
     border: 1px dashed #ccc;
-    background: transparent;
+    background: transparent url('../img/icons/edit.png') right 7px center no-repeat;
     }
 .input-dashed[type="text"]:hover {
     border-color: #666;
@@ -309,11 +312,27 @@ form fieldset div.field .justify label {
 .hotel-search .field {
     margin-bottom: 10px;
     }
-.hotel-search-rooms,
-.hotel-search-filters {
+.hotel-search-rooms {
     position: relative;
     display: none;
     margin-bottom: 10px;
     padding: 14px 0;
     border-top: 1px solid #ddd;
+    }
+.hotel-search-filters {
+    position: relative;
+    display: none;
+    margin-bottom: -30px;
+    padding: 14px 0 0;
+    border-top: 1px solid #ddd;
+    }
+.hotel-search-legend {
+    margin: 0 0 10px;
+    padding: 14px 0;
+    }
+.hotel-search-legend input[type="checkbox"] + label {
+    margin: 0 15px 0 0;
+    padding: 7px 7px 7px 27px;
+    border: 1px solid #dedede;
+    background-position: 7px center;
     }

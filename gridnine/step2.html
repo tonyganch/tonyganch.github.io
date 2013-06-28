@@ -102,7 +102,7 @@
                         </div>
 
                         <!-- Параметры агента -->
-                        <fieldset>
+                        <fieldset class="hotel-search-legend">
                             <input id="a1" type="checkbox">
                             <label for="a1">Спецпредложение</label>
                             <input id="a2" type="checkbox">
@@ -120,17 +120,23 @@
                         <fieldset class="separator-line">
                             <div class="field expanded-25">
                                 <label>Поставщик</label>
-                                <select>
-                                    <option>Все поставщики</option>
-                                    <option>Поставщик 1</option>
-                                </select>
+                                <div class="dropdown-select">
+                                    <input type="text" readonly="readonly" value="Все поставщики">
+                                    <ul>
+                                        <li>Option 1</li>
+                                        <li>Option 2</li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="field expanded-25">
                                 <label>Вид оплаты</label>
-                                <select>
-                                    <option>Все виды</option>
-                                    <option>Оплата 1</option>
-                                </select>
+                                <div class="dropdown-select">
+                                    <input type="text" readonly="readonly" value="Все виды">
+                                    <ul>
+                                        <li>Option 1</li>
+                                        <li>Option 2</li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="field expanded-25">
                                 <label>Минимальная цена (евро)</label>
@@ -142,17 +148,23 @@
                             </div>
                             <div class="field expanded-25">
                                 <label>Сеть отелей</label>
-                                <select>
-                                    <option>Все отели</option>
-                                    <option>Отель 1</option>
-                                </select>
+                                <div class="dropdown-select">
+                                    <input type="text" readonly="readonly" value="Все отели">
+                                    <ul>
+                                        <li>Option 1</li>
+                                        <li>Option 2</li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="field expanded-25">
                                 <label>Тип питания</label>
-                                <select>
-                                    <option>Все типы</option>
-                                    <option>Тип 1</option>
-                                </select>
+                                <div class="dropdown-select">
+                                    <input type="text" readonly="readonly" value="Все типы">
+                                    <ul>
+                                        <li>Option 1</li>
+                                        <li>Option 2</li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="field expanded-50">
                                 <label>Количество звёзд</label>
