@@ -1,7 +1,11 @@
 ---
+
 layout: post
-title:  "git rebase: наводим порядок в локальных ветках"
+
+title:  "git rebase: порядок в локальных ветках"
+
 categories: git
+
 ---
 
 Самый частый вопрос, с которым я сталкиваюсь в разговорах про git:
@@ -317,8 +321,3 @@ Rebase — чудесный и мощный инструмент.
 а поиск по ней лёгким.    
 Попробуйте применить их перед следующим пушем.
 
-<footer class="footer">
-Все вопросы можно задать
-<a href="mailto:tonyganch+tg.com@gmail.com">по почте</a>
-или <a href="https://twitter.com/tonyganch" target="_blank">в твиттере</a>.
-</footer>

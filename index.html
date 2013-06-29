@@ -4,10 +4,10 @@ title: Tony Ganch. Заметки
 ---
 
 {% for post in site.posts %}
-    <h2>
-        <a href="{{ post.url }}">
+    <article class="post">
+        <h2>
             {{ post.title }}
-        </a>
-    </h2>
-    {{ post.content }}
+        </h2>
+        {{ post.content }}
+    </article>
 {% endfor %}
