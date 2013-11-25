@@ -20,6 +20,17 @@
                 <a href="mailto:tonyganch+tg.com@gmail.com">по почте</a>
                 или <a href="https://twitter.com/tonyganch" target="_blank">в
                 твиттере</a>.
+
+                {% if page.url == '/index.html' %}
+                    <p>Другие заметки:</p>
+                    <ul>
+                        {% for post in site.posts offset:1%}
+                            <li>
+                                <a href="{{ post.url }}">{{ post.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </footer>
         </div>
         <script>

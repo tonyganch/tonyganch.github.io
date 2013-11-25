@@ -9,6 +9,9 @@ a {
     color: #0985ce;
     text-decoration: none;
     }
+ul {
+    list-style-type: circle;
+    }
 img {
     max-width: 100%;
     }
