@@ -1,4 +1,4 @@
 name: Tony Ganch
-pygments: true
+highlighter: true
 permalink: /:categories/:title
 markdown: kramdown
