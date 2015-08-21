@@ -1,10 +1,16 @@
 ---
 
+categories: git, publish
+
+ident: 'git-rebase'
+
 layout: post
 
-title:  "git rebase: порядок в локальных ветках"
+permalink: /git/rebase
 
-categories: git
+ru: /git/rebase/ru
+
+title:  "git rebase: порядок в локальных ветках"
 
 ---
 

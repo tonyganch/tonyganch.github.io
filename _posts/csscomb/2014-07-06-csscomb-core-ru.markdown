@@ -1,10 +1,16 @@
 ---
 
+en: /csscomb/core
+
+ident: 'csscomb-core'
+
+lang: ru
+
 layout: post
 
-title:  "CSScomb Core: постпроцессор за 15 мин"
+permalink: /csscomb/core/ru
 
-categories: parsers
+title:  "CSScomb Core: постпроцессор за 15 мин"
 
 ---
 

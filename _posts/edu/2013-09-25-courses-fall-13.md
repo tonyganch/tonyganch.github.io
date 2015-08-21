@@ -1,10 +1,14 @@
 ---
 
+categories: edu, publish
+
+lang: ru
+
 layout: post
 
-title:  "Обзор курсов для биоинформатиков"
+permalink: /edu/courses-fall-13
 
-categories: edu
+title:  "Обзор курсов для биоинформатиков"
 
 ---
 

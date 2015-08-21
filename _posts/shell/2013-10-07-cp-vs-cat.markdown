@@ -1,10 +1,14 @@
 ---
 
+categories: publish
+
+lang: ru
+
 layout: post
 
-title:  "Отличие cp и cat"
+permalink: /shell/cp-vs-cat
 
-categories: shell
+title:  "Отличие cp и cat"
 
 ---
 

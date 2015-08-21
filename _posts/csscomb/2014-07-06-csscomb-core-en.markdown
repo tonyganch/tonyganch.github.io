@@ -1,27 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>CSScomb Core: write a postprocessor in 15 mins</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+---
 
-        <link rel="stylesheet" href="/css/syntax.css">
-        <link rel="stylesheet" href="/css/main.css">
+categories: publish
 
-        <link rel="shortcut icon" href="http://github.com/favicon.ico">
-    </head>
-    <body>
+ident: 'csscomb-core'
 
-<header class="header">
-    <a href="/" class="header-link">
-        Tony Ganch
-    </a>
-</header>
-        <div class="content">
+layout: post
 
-<article class="post">
-<h2 style="font-size:1.8em">CSScomb Core: write a postprocessor in 15 mins</h2>
+permalink: /csscomb/core
+
+ru: /csscomb/core/ru
+
+title:  "CSScomb Core: postprocessor in 15 mins"
+
+---
 
 <p class="note">
 <strong>TL;DR</strong><br/>
@@ -30,7 +21,6 @@ Just fork <a href="https://github.com/csscomb/core-template" title="Flip Comb">
 a special template</a> and modify it.
 </p>
 
-<p>
 This summer <a href="https://github.com/csscomb/csscomb.js" tile="CSScomb
 on GitHub">CSScomb.js</a> turns 1 year.<br/>
 <a href="https://github.com/csscomb/csscomb.js/graphs/contributors"
@@ -38,19 +28,16 @@ title="CSScomb contributors">We</a> have spent this time working on amazing
 project which is now easy to maintain and easy to scale.<br/>
 Today I'd love to share a part of our work which will help you create your own
 projects.
-</p>
 
-<h3>CSScomb Core</h3>
+### CSScomb Core
 
-<p>
 The heart of our tool is now available as a separate module — <a href="https://github.com/csscomb/core" title="CSScomb Core on GitHub">CSScomb Core</a>.<br/>
 You can use it to write different postprocessors.<br/>
 I've made <a href="https://github.com/csscomb/core-template" title="Flip Comb on
 GitHub">a template repo</a> to show you how simple it is.<br/>
 Just fork it and play with code.
-</p>
 
-<h3>What's inside</h3>
+### What's inside
 
 <ol>
 <li>
@@ -61,7 +48,6 @@ title="Gonzales PE">Gonzales PE</a>.<br/>
 This parser can process not only CSS, but preprocessors too: LESS, Sass and
 SCSS.
 </p></li>
-
 
 <li>
 <p><b>API to work with configs</b></p>
@@ -86,7 +72,8 @@ To use a plugin, just put it in a special directory
 or apply it with two lines of code:
 <pre><code>var option = require('path/to/option');
 core.use(option);</code></pre>
-</p></li>
+</p>
+</li>
 
 <li>
 <p><b>API to work with files</b></p>
@@ -99,64 +86,17 @@ core.processFile('path/to/file.css');
 core.processDirectory('path/to/dir');</code></pre>
 </p></li></ol>
 
-<h3>Get started</h3>
+### Get started
 
-<p>
 There is a <a href="https://github.com/csscomb/core-template">tiny template</a>
 I've made to help you get started.<br/>
 The postprocessor is called Flip Comb and all it does is replace comments in CSS
 files with <code>/* (╯°□°）╯︵ ┻━┻ */</code>.<br/>
 It took me 15 minutes to write those two files.<br/>
 The result is pretty useless, but you can learn something from it.
-</p>
 
-<p>
 Just fork the repo and play around.<br/>
 When you are ready to go further,
 <a href="https://github.com/csscomb/core">read docs</a> for more
 information.<br/>
 Have fun!
-</p>
-</article>
-
-            <footer class="footer">
-                If you have any questions, feel free to
-                <a href="mailto:tonyganch+tg.com@gmail.com">drop me a line</a>
-                or <a href="https://twitter.com/tonyganch" target="_blank">send
-                a message</a>.
-            </footer>
-        </div>
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-            ga('create', 'UA-41864668-1', 'tonyganch.com');
-            ga('send', 'pageview');
-        </script>
-<script type="text/javascript">
-(function (d, w, c) {
-    (w[c] = w[c] || []).push(function() {
-        try {
-            w.yaCounter21565555 = new Ya.Metrika({id:21565555,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true});
-        } catch(e) { }
-    });
-
-    var n = d.getElementsByTagName("script")[0],
-        s = d.createElement("script"),
-        f = function () { n.parentNode.insertBefore(s, n); };
-    s.type = "text/javascript";
-    s.async = true;
-    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-
-    if (w.opera == "[object Opera]") {
-        d.addEventListener("DOMContentLoaded", f, false);
-    } else { f(); }
-})(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript><div><img src="//mc.yandex.ru/watch/21565555" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    </body>
-</html>

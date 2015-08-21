@@ -1,10 +1,16 @@
 ---
 
+en: /git/reset
+
+ident: 'git-reset'
+
+lang: ru
+
 layout: post
 
-title:  "git reset: повернуть время вспять"
+permalink: /git/reset/ru
 
-categories: git
+title:  "git reset: повернуть время вспять"
 
 ---
 
