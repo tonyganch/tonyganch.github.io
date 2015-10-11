@@ -70,13 +70,12 @@ figcaption {
     position: relative;
     top: -20px;
     }
-@media (max-width: 1000px) {
-    .header {
-        position: static;
-        margin: 0 auto;
-        padding: 20px 20px 0;
-        max-width: 700px;;
-        }
+.header:visited {
+    color: #0985ce;
+    }
+.header:hover,
+.header:active {
+    color: tomato;
     }
 .content {
     margin: 0 auto;

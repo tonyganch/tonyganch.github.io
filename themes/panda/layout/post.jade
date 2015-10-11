@@ -1,0 +1,22 @@
+article.post
+  h2= page.title
+
+  if page.translation
+    a.header(href=page.translation)= __('other_lang_link')
+
+  != page.content
+
+footer.footer
+  p
+    != __('contacts.welcome') + ' '
+    != mail_to('tonyganch+tg.com@gmail.com', __('contacts.email'))
+    != ' ' + __('contacts.or') + ' '
+    != link_to('https://twitter.com/tonyganch', __('contacts.twitter'), {external: true}) + '.'
+  p= __('other_posts') + ':'
+  ul
+    - site.posts.sort('date', -1).forEach(function(post) {
+      if post.show_in_footer
+        if post.id != page.id
+          li
+            a(href=url_for(post.path))!= post.title
+    - })

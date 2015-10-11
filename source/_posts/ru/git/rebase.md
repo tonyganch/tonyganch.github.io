@@ -1,16 +1,7 @@
----
-
-categories: git, publish
-
-ident: 'git-rebase'
-
-layout: post
-
-permalink: /git/rebase
-
-ru: /git/rebase/ru
-
 title:  "git rebase: порядок в локальных ветках"
+date: 2013/06/16
+id: "git-rebase"
+translation: "/git/rebase"
 
 ---
 

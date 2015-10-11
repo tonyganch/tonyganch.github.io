@@ -1,16 +1,7 @@
----
-
-en: /git/reset
-
-ident: 'git-reset'
-
-lang: ru
-
-layout: post
-
-permalink: /git/reset/ru
-
 title:  "git reset: повернуть время вспять"
+date: 2013/11/26
+id: "git-reset"
+translation: "/git/reset"
 
 ---
 
@@ -117,7 +108,7 @@ title:  "git reset: повернуть время вспять"
     a1a1a1 HEAD@{4}: commit (amend): Add cool method
     ...
 
-Ищем коммит перед чекаутом и откатываеся:
+Ищем коммит перед чекаутом и откатываемся:
 
     $ git reset --hard HEAD@{4}
 

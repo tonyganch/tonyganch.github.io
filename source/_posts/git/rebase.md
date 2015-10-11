@@ -1,18 +1,8 @@
----
-
-categories: git
-
-en: /git/rebase
-
-ident: 'git-rebase'
-
-lang: ru
-
-layout: post
-
-permalink: /git/rebase/ru
-
 title:  "git rebase: порядок в локальных ветках"
+date: 2013/06/16
+id: "git-rebase"
+show_in_footer: true
+translation: "/ru/git/rebase"
 
 ---
 

@@ -1,14 +1,7 @@
----
-
-categories: publish
-
-lang: ru
-
-layout: post
-
-permalink: /shell/cp-vs-cat
-
 title:  "Отличие cp и cat"
+date: 2013/10/07
+id: "shell-cp-vs-cat"
+show_in_footer: true
 
 ---
 

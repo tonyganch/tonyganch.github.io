@@ -1,26 +1,17 @@
----
-
-categories: publish
-
-ident: 'git-reset'
-
-layout: post
-
-permalink: /git/reset
-
-ru: /git/reset/ru
-
 title:  "git reset: time machine"
+date: 2013/11/26
+id: "git-reset"
+show_in_footer: true
+translation: "/ru/git/reset"
 
 ---
 
-Самые страшные команды в гите: `git reset --hard` и `git push --force`.    
-Особенно если выполнены случайно, друг за другом и в репозитории, с которым
-работает ещё пара десятков человек.    
-Как быстро исправить ситуацию?    
-Сделать `git reset`.
+The most terrifying git commands are `git reset --hard` and `git push --force`.    
+Things get even worse when you run them by accident in repository shared with
+dozens of collegues.    
+Good news! You can always run `git reset` for a quick fix.
 
-### Волшебная формула
+### Silver bullet
 
 Команда на все случаи, когда нужно что-то отменить:
 
@@ -117,7 +108,7 @@ title:  "git reset: time machine"
     a1a1a1 HEAD@{4}: commit (amend): Add cool method
     ...
 
-Ищем коммит перед чекаутом и откатываеся:
+Ищем коммит перед чекаутом и откатываемся:
 
     $ git reset --hard HEAD@{4}
 

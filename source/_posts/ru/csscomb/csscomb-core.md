@@ -1,16 +1,7 @@
----
-
-en: /csscomb/core
-
-ident: 'csscomb-core'
-
-lang: ru
-
-layout: post
-
-permalink: /csscomb/core/ru
-
 title:  "CSScomb Core: постпроцессор за 15 мин"
+date: 2014/07/06
+id: "csscomb-core"
+translation: "/csscomb/csscomb-core"
 
 ---
 

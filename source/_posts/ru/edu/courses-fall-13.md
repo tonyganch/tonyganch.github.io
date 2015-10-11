@@ -1,14 +1,7 @@
----
-
-categories: edu, publish
-
-lang: ru
-
-layout: post
-
-permalink: /edu/courses-fall-13
-
 title:  "Обзор курсов для биоинформатиков"
+date: 2013/09/25
+id: "edu-courses-fall-13"
+show_in_footer: true
 
 ---
 
