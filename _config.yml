@@ -74,4 +74,4 @@ theme: panda
 deploy:
   type: git
   repo: git@github.com:tonyganch/tonyganch.github.io.git
-  branch: publish
+  branch: master
