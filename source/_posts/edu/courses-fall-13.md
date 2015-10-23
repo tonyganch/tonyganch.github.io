@@ -1,4 +1,4 @@
-title:  "Обзор курсов для биоинформатиков"
+title: "Обзор курсов для биоинформатиков"
 date: 2013/09/25
 id: "edu-courses-fall-13"
 show_in_footer: true

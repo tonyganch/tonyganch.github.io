@@ -1,8 +1,7 @@
-title:  "git rebase: порядок в локальных ветках"
+title: "git rebase: порядок в локальных ветках"
 date: 2013/06/16
 id: "git-rebase"
 show_in_footer: true
-translation: "/ru/git/rebase"
 
 ---
 

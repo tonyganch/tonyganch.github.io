@@ -1,4 +1,4 @@
-title:  "CSScomb Core: postprocessor in 15 mins"
+title: "CSScomb Core: postprocessor in 15 mins"
 date: 2014/07/06
 id: "csscomb-core"
 show_in_footer: true
