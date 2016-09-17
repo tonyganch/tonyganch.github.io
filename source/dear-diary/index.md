@@ -69,8 +69,8 @@ date: 2016-09-17 14:59:46
 ### A perfect gift would be (in omg-i-want-it order):
 
 - Specific bottles:
-    - Laphroaig (whiskey)
     - Disaronno (amaretto liqueur)
+    - Laphroaig (whiskey)
     - Byrrh Grand Quinquina (wine)
     - Don Julio Añejo (tequila)
     - Don Julio Blanco (tequila)
