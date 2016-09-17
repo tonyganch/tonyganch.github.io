@@ -77,7 +77,7 @@ date: 2016-09-17 14:59:46
     - Sandeman 20 years (porto)
 - Other:
     - New bitters
-    - Rare spices and dried citrus zeist
+    - Rare spices and dried citrus zest
     - Aromatised wines, wine-based anything
 
 
