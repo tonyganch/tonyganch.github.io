@@ -41,6 +41,7 @@ date: 2016-09-17 14:59:46
     - Grand Marnier
     - Jack Daniel's Fire
     - Luxardo Maraschino
+    - Mandarine Napoléon
 - Misc
     - Aperol
     - Campari
@@ -69,6 +70,9 @@ date: 2016-09-17 14:59:46
 ### A perfect gift would be (in omg-i-want-it order):
 
 - Specific bottles:
+    - Fig liquer or wine (for example, Figoun or Figcello)
+    - Pineau des Charentes (both blanc and rouge) (wine)
+    - Grand Marnier Raspberry Peach
     - Disaronno (amaretto liqueur)
     - Laphroaig (whiskey)
     - Byrrh Grand Quinquina (wine)
@@ -76,9 +80,10 @@ date: 2016-09-17 14:59:46
     - Don Julio Blanco (tequila)
     - Sandeman 20 years (porto)
 - Other:
-    - New bitters
+    - Interesting bitters
     - Rare spices and dried citrus zest
     - Aromatised wines, wine-based anything
+    - Strange or colorful liqueurs
 
 
 ### Please don't bring:
