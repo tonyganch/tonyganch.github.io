@@ -38,10 +38,12 @@ date: 2016-09-17 14:59:46
     - Cherry Marnier
     - Creme de cassis
     - Cointreau
+    - Disaronno
     - Grand Marnier
     - Jack Daniel's Fire
     - Luxardo Maraschino
     - Mandarine Napoléon
+    - Red Stag black cherry
 - Misc
     - Aperol
     - Campari
@@ -55,15 +57,19 @@ date: 2016-09-17 14:59:46
     - M&S
 - Vodka
 - Whiskey
+    - Chivas Regal 12 years
+    - Laphroaig 10 years
     - Woodford Reserve Distiller's Select
 - Wine
-    - Burmester tawny
+    - ~~Burmester tawny~~
     - Dolin Blanc
     - Dolin Rouge
-    - Dubonnet
+    - ~~Dubonnet~~
     - Lillet Blanc
     - Lillet Rouge
-    - M&S tawny 20 years
+    - Martinez Marsala Superiore Reserva
+    - M&S cream cherry
+    - ~~M&S tawny 20 years~~
     - Sandeman white porto
     - Sandeman fino sherry
 
@@ -71,14 +77,12 @@ date: 2016-09-17 14:59:46
 
 - Specific bottles:
     - Fig liquer or wine (for example, Figoun or Figcello)
-    - Pineau des Charentes (both blanc and rouge) (wine)
     - Grand Marnier Raspberry Peach
-    - Disaronno (amaretto liqueur)
-    - Laphroaig (whiskey)
     - Byrrh Grand Quinquina (wine)
+    - Pineau des Charentes (both blanc and rouge) (wine)
+    - Sandeman 20 years (porto)
     - Don Julio Añejo (tequila)
     - Don Julio Blanco (tequila)
-    - Sandeman 20 years (porto)
 - Other:
     - Interesting bitters
     - Rare spices and dried citrus zest
