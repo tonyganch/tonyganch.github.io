@@ -15,6 +15,7 @@
     "hexo-server": "^0.1.2"
   },
   "scripts": {
+    "deploy": "./node_modules/.bin/hexo deploy",
     "start": "./node_modules/.bin/hexo server"
   }
 }
