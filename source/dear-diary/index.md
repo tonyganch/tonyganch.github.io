@@ -76,6 +76,7 @@ date: 2016-09-17 14:59:46
 ### A perfect gift would be (in omg-i-want-it order):
 
 - Specific bottles:
+    - [Cherry Gin](https://www.masterofmalt.com/gin/that-boutiquey-gin-company/cherry-gin-that-boutiquey-gin-company-gin/)
     - Fig liquer or wine (for example, Figoun or Figcello)
     - Grand Marnier Raspberry Peach
     - Byrrh Grand Quinquina (wine)
