@@ -1,3 +1,26 @@
-- page.posts.sort('date', -1).limit(1).each(function(post){
-  != partial('post', {page: post})
-- })
+article.post
+  h2 Tony Ganch
+
+  p
+    != __('contacts.welcome') + ' '
+    != mail_to('tonyganch+tg.com@gmail.com', __('contacts.email'))
+    != ' ' + __('contacts.or') + ' '
+    != link_to('https://twitter.com/tonyganch', __('contacts.twitter'), {external: true}) + '.'
+
+  h3 Wishlists
+
+  ul
+      li
+          a(href="/dear-diary") Alcohol
+      li
+          a(href="lp") LP
+
+  h3 Posts
+
+  ul
+    - site.posts.sort('date', -1).forEach(function(post) {
+      if post.show_in_footer
+        li
+          a(href=url_for(post.path))!= post.title
+    - })
+
