@@ -76,6 +76,10 @@ date: 2016-09-17 14:59:46
 ### A perfect gift would be (in omg-i-want-it order):
 
 - Specific bottles:
+    - [Master of Malt World's Largest Tasting Set](https://www.masterofmalt.com/tasting-set/worlds-largest-tasting-set/)
+    - [Ian Buxton 101 Whiskies to Try Before You Die Tasting Set](https://www.masterofmalt.com/tasting-set/ian-buxton-101-whiskies-to-try-before-you-die-tasting-set/)
+    - [The Bourbon Advent Calendar](https://www.masterofmalt.com/whiskies/drinks-by-the-dram/the-bourbon-advent-calendar/)
+    - [Unusual Cask Whisky Tasting Set](https://www.masterofmalt.com/tasting-set/unusual-cask-whisky-tasting-set/)
     - [Cherry Gin](https://www.masterofmalt.com/gin/that-boutiquey-gin-company/cherry-gin-that-boutiquey-gin-company-gin/)
     - Fig liquer or wine (for example, Figoun or Figcello)
     - Grand Marnier Raspberry Peach
@@ -85,7 +89,9 @@ date: 2016-09-17 14:59:46
     - Don Julio Añejo (tequila)
     - Don Julio Blanco (tequila)
 - Other:
-    - Interesting bitters
+    - Interesting bitters, for example:
+        - [Lejay Cassis Bitters](https://www.masterofmalt.com/bitters/lejay/lejay-cassis-bitters/)
+        - [Bitter Bastards Cocoa Bitters](https://www.masterofmalt.com/bitters/bitter-bastards/bitter-bastards-cocoa-bitters/)
     - Rare spices and dried citrus zest
     - Aromatised wines, wine-based anything
     - Strange or colorful liqueurs
