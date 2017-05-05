@@ -2,7 +2,7 @@ title: "CSScomb Core: postprocessor in 15 mins"
 date: 2014/07/06
 id: "csscomb-core"
 show_in_footer: true
-translation: "ru/csscomb/csscomb-core"
+translation: "/ru/csscomb/csscomb-core"
 
 ---
 
