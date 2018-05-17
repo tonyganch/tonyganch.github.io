@@ -13,7 +13,7 @@ language:
 timezone:
 
 # URL
-url: http://tonyganch.com
+url: http://tonyganch.io
 root: /
 permalink: :lang/:title/
 
