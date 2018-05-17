@@ -65,6 +65,14 @@ figcaption {
     font-style: italic;
     font-size: 0.8em;
     }
+.nani {
+    font-size: inherit;
+    height: 4em;
+    margin: 0 0 0 -0.3em;
+    }
+.nani img {
+    height: 100%;
+    }
 .header {
     display: inline-block;
     position: relative;
