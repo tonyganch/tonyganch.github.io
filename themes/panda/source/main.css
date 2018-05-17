@@ -10,6 +10,7 @@ a {
     }
 a:visited {
     color: purple;
+    color: #0985ce;
     }
 a:hover,
 a:active {
@@ -89,6 +90,20 @@ figcaption {
         max-width: 100%;
         }
     }
+.index-list {
+    list-style: none;
+    margin-top: 1.5em;
+    padding: 0;
+    }
+.index-list li {
+  margin-bottom: 2em;
+  }
+.index-list ul {
+  margin-top: 0.5em;
+  }
+.index-list ul li {
+  margin-bottom: 0.5em;
+  }
 .post {
     padding: 40px 0 0;
     position: relative;

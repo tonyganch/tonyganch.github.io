@@ -1,26 +1,21 @@
 article.post
   h2 Tony Ganch
 
-  p
-    != __('contacts.welcome') + ' '
-    != mail_to('tonyganch+tg.com@gmail.com', __('contacts.email'))
-    != ' ' + __('contacts.or') + ' '
-    != link_to('https://twitter.com/tonyganch', __('contacts.twitter'), {external: true}) + '.'
+  ul.index-list
+    li
+      | My posts on git (sorry, Russian):
+      ul
+        li #[a(href="/git/rebase") rebase]
+        li #[a(href="/git/reset") reset]
+    li
+      | My (deprecated) projects:
+      ul
+        li #[a(href="https://github.com/csscomb/csscomb.js") CSScomb] (CSS coding style formatter)
+        li #[a(href="https://github.com/tonyganch/gonzales-pe") GPE] (CSS parser with support of preprocessors)
 
-  h3 Wishlists
+    li My #[a(href="/lp") LP wishlist] and #[a(href="https://www.discogs.com/user/tonyganch/collection") current collection]
 
-  ul
-      li
-          a(href="/dear-diary") Alcohol
-      li
-          a(href="lp") LP
+    li My #[a(href="/dear-diary") alcohol wishlist) and #[a(href="/dear-diary/#Things-I’ve-got-at-home-in-abc-order") current collection]
 
-  h3 Posts
-
-  ul
-    - site.posts.sort('date', -1).forEach(function(post) {
-      if post.show_in_footer
-        li
-          a(href=url_for(post.path))!= post.title
-    - })
-
+footer.footer
+  p Feel free to drop me a line #[a(href="mailto:tonyganch+tg.com@gmail.com") by mail] or #[a(href="https://twitter.com/tonyganch") via twitter].

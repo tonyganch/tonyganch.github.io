@@ -7,16 +7,4 @@ article.post
   != page.content
 
 footer.footer
-  p
-    != __('contacts.welcome') + ' '
-    != mail_to('tonyganch+tg.com@gmail.com', __('contacts.email'))
-    != ' ' + __('contacts.or') + ' '
-    != link_to('https://twitter.com/tonyganch', __('contacts.twitter'), {external: true}) + '.'
-  p= __('other_posts') + ':'
-  ul
-    - site.posts.sort('date', -1).forEach(function(post) {
-      if post.show_in_footer
-        if post.id != page.id
-          li
-            a(href=url_for(post.path))!= post.title
-    - })
+  p Feel free to drop me a line #[a(href="mailto:tonyganch+tg.com@gmail.com") by mail] or #[a(href="https://twitter.com/tonyganch") via twitter].
