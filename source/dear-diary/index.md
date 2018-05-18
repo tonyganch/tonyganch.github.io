@@ -4,25 +4,21 @@ date: 2016-09-17 14:59:46
 
 ---
 
-### A perfect gift would be (in omg-i-want-it order):
+### A perfect gift would be:
 
 - [Master of Malt World's Largest Tasting Set](https://www.masterofmalt.com/tasting-set/worlds-largest-tasting-set/)
-- [Four Pillars Bloody Shiraz gin](https://www.masterofmalt.com/gin/four-pillars-distillery/four-pillars-bloody-shiraz-gin/)
-- [Ki No Bi gin](https://www.masterofmalt.com/gin/kyoto-distillery/ki-no-bi-gin/)
 - Fig liquer or wine (for example, Figoun or Figcello)
 - Japanese whisky
-- Grand Marnier Raspberry Peach
 - Byrrh Grand Quinquina (wine)
 - Pineau des Charentes (rouge) (wine)
 - Sandeman 40 years (porto)
 - Don Julio Añejo (tequila)
-- Interesting bitters, for example:
-    - [Lejay Cassis Bitters](https://www.masterofmalt.com/bitters/lejay/lejay-cassis-bitters/)
+- Interesting bitters
 - Aromatised or fortified wines
 - Interesting not-herbal liqueurs
 
 
-### Please don't bring:
+### Things i don't appreciate:
 
 - Liqueurs with herbal flavour
 - Limoncello
@@ -36,6 +32,7 @@ date: 2016-09-17 14:59:46
     - Angostura
     - Angostura orange bitters
     - Fee Brothers' cherry bitters
+    - Lejay Cassis
     - Miracle Mile Chocolate Chilli
     - Regency Bourbon Oak Smoked Mango
 - Brandy
@@ -50,7 +47,9 @@ date: 2016-09-17 14:59:46
     - Cherry gin (by That Boutique-y Gin Company)
     - Citadelle
     - The Duke
+    - Four Pillars Bloody Shiraz
     - Hendrick's
+    - Ki No Bi
     - Lebensstern Dry
     - Lebensstern Pink
     - Mayfair
@@ -66,6 +65,7 @@ date: 2016-09-17 14:59:46
     - Cointreau
     - Disaronno
     - Grand Marnier
+    - Grand Marnier Raspberry Peach
     - Jack Daniel's Fire
     - Luxardo Maraschino
     - Mandarine Napoléon
@@ -93,6 +93,7 @@ date: 2016-09-17 14:59:46
     - Lagavulin 1999 Pedro Ximénez Cask Finish Distillers Edition
     - Laphroaig 10 years
     - The Macallan 12 Year Old Sherry Oak
+    - Nikka Blended
     - Smögen 3 Year Old 2011 Sherry Project 1:1
     - Tyrconnell
     - Woodford Reserve Distiller's Select
