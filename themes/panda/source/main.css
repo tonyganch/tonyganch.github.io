@@ -65,6 +65,15 @@ figcaption {
     font-style: italic;
     font-size: 0.8em;
     }
+.puf li {
+    margin: 0 0 1.5em;
+    }
+.puf img {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
+    max-height: 300px;
+    }
 .nani {
     font-size: inherit;
     height: 4em;
