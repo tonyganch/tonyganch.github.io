@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Tony Ganch</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/syntax.css"><link rel="stylesheet" href="/main.css"><link rel="shortcut icon" href="http://github.com/favicon.ico"><meta name="generator" content="Hexo 5.4.0"></head><body><div class="content"><article class="post"><h2>Отличие cp и cat</h2><p>Скопировать файлы из консоли можно двумя способами: <code>cp a b</code> и <code>cat a &gt; b</code>.<br>Разницу между ними можно отчасти понять из сути самих команд: <code>cp</code> копирует
+файл, а <code>cat</code> создаёт новый файл с таким же содержимым.<br>В большинстве случаев эти два метода взаимозаменяемы, но существует пара
+нюансов.</p>
+<h3 id="Права"><a href="#Права" class="headerlink" title="Права"></a>Права</h3><p class="note">
+<b>TL;DR:</b> <code>cp</code> сохраняет оригинальные права на файл,
+<code>cat</code> — нет.
+</p>
+
+<p>Создадим тестовый скрипт:</p>
+<pre><code>$ touch a.sh
+</code></pre><p>По умолчанию для новых файлов мы получаем права только на чтение и запись:</p>
+<pre><code>$ ls -l a.sh
+-rw-r--r--  1 tonyganch  foo  0 Oct  7 09:29 a.sh
+</code></pre><p>Добавим право на исполнение:</p>
+<pre><code>$ chmod +x a.sh
+$ ls -l a.sh
+-rwxr-xr-x  1 tonyganch  foo  0 Oct  7 09:29 a.sh
+</code></pre><p>А теперь сделаем две копии этого скрипта и проверим их права:</p>
+<pre><code>$ cp a.sh b.sh
+$ ls -l b.sh
+-rwxr-xr-x  1 tonyganch  foo  0 Oct  7 09:30 b.sh
+
+$ cat a.sh &gt; c.sh
+$ ls -l c.sh
+-rw-r--r--  1 tonyganch  foo  0 Oct  7 09:30 c.sh
+</code></pre><p>Как видим, <code>cp</code> скопировал скрипт вместе с правами оригинального файла, <code>cat</code> же
+сохранил только содержимое файла.</p>
+<h3 id="Разрежённые-файлы"><a href="#Разрежённые-файлы" class="headerlink" title="Разрежённые файлы"></a>Разрежённые файлы</h3><p class="note">
+Пользователи Mac OS могут дальше не читать.
+</p>
+
+<p>В некоторых файловых системах существует понятие разрежённых файлов (<a href="http://en.wikipedia.org/wiki/Sparse_file" target="_blank" rel="noopener">sparse
+files</a>).<br>Это такие чудесные файлы, в которых последовательность нулевых битов заменяется
+на информацию об этой последовательности.<br>Иными словами, пустое пространство файла не занимает физического места на
+диске.</p>
+<figure>
+    <img src="http://upload.wikimedia.org/wikipedia/commons/9/9f/Sparse_file_%28en%29.svg">
+</figure>
+
+<p>В терминале это можно сделать так:</p>
+<pre><code>$ dd if=/dev/null of=a.sh bs=512b seek=5
+</code></pre><p>Нас интересует размер получившегося файла, поэтому взвешиваем его:</p>
+<pre><code>$ du -sh a.sh
+0       a.sh
+</code></pre><p>Теперь копируем скрипт и взвешиваем результат:</p>
+<pre><code>$ cp a.sh b.sh
+$ du -sh b.sh
+0       a.sh
+
+$ cat a.sh &gt; c.sh
+$ du -sh c.sh
+1,3M    c.sh
+</code></pre><p><code>cp</code> просто делает копию, не трогая содержимое, а <code>cat</code> «распаковывает» наш
+ужатый файл.</p>
+</article><footer class="footer"><p>Feel free to drop me a line <a href="mailto:tonyganch+tg.com@gmail.com">by mail</a>.</p></footer></div></body></html>

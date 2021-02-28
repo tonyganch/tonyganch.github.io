@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Tony Ganch</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/syntax.css"><link rel="stylesheet" href="/main.css"><link rel="shortcut icon" href="http://github.com/favicon.ico"><meta name="generator" content="Hexo 5.4.0"></head><body><div class="content"><article class="post"><h2>CSScomb Core: postprocessor in 15 mins</h2><a class="header" href="ru/csscomb/csscomb-core">This post in English</a><p class="note">
+<strong>TL;DR</strong><br>
+Want to write your own postprocessor but don’t want to spend much time?<br>
+Just fork <a href="https://github.com/csscomb/core-template" title="Flip Comb" target="_blank" rel="noopener">
+a special template</a> and modify it.
+</p>
+
+<p>This summer <a href="https://github.com/csscomb/csscomb.js" tile="CSScomb
+on GitHub" target="_blank" rel="noopener">CSScomb.js</a> turns 1 year.<br>
+<a href="https://github.com/csscomb/csscomb.js/graphs/contributors" title="CSScomb contributors" target="_blank" rel="noopener">We</a> have spent this time working on amazing
+project which is now easy to maintain and easy to scale.<br>
+Today I’d love to share a part of our work which will help you create your own
+projects.</p>
+<h3 id="CSScomb-Core"><a href="#CSScomb-Core" class="headerlink" title="CSScomb Core"></a>CSScomb Core</h3><p>The heart of our tool is now available as a separate module — <a href="https://github.com/csscomb/core" title="CSScomb Core on GitHub" target="_blank" rel="noopener">CSScomb Core</a>.<br>
+You can use it to write different postprocessors.<br>
+I’ve made <a href="https://github.com/csscomb/core-template" title="Flip Comb on
+GitHub" target="_blank" rel="noopener">a template repo</a> to show you how simple it is.<br>
+Just fork it and play with code.</p>
+<h3 id="What’s-inside"><a href="#What’s-inside" class="headerlink" title="What’s inside"></a>What’s inside</h3><ol>
+<li>
+<p><b>Parser with preprocessors support</b></p>
+<p>
+Our tool is based on <a href="https://github.com/tonyganch/gonzales-pe" title="Gonzales PE" target="_blank" rel="noopener">Gonzales PE</a>.<br>
+This parser can process not only CSS, but preprocessors too: LESS, Sass and
+SCSS.
+</p></li>
+
+<li>
+<p><b>API to work with configs</b></p>
+<p>
+Sometimes postprocessors need to be configured.<br>
+CSScomb has <a href="https://github.com/csscomb/csscomb.js/tree/dev/lib/options" target="_blank" rel="noopener">25 settings</a>, for example.<br>
+As a user you can write
+<a href="https://github.com/csscomb/csscomb.js/blob/dev/config/csscomb.json" target="_blank" rel="noopener">
+a config file</a> to set the options you need.<br>
+And it’s easy to apply that config with CSScomb Core:<br>
+<pre><code>var config = require(‘path/to/config.json’);
+core.configure(config);</code></pre>
+</p></li>
+
+<li>
+<p><b>API to write and use plugins</b></p>
+<p>
+Every option is an
+<a href="https://github.com/csscomb/core#writing-a-plugin" title="Writing a plugin" target="_blank" rel="noopener">independent plugin</a>.<br>
+To use a plugin, just put it in a special directory
+(<a href="https://github.com/csscomb/core-template/blob/master/lib/flip-comb.js#L9" target="_blank" rel="noopener">see Flip Comb for an example</a>)
+or apply it with two lines of code:
+<pre><code>var option = require(‘path/to/option’);
+core.use(option);</code></pre>
+</p>
+</li>
+
+<li>
+<p><b>API to work with files</b></p>
+<p>
+Whether you want to process a single file or a whole directory — it’s easy to
+get done.<br>
+We take care of syntax detection and working with file system:
+<pre><code>core.processString(string, syntax);
+core.processFile(‘path/to/file.css’);
+core.processDirectory(‘path/to/dir’);</code></pre>
+</p></li></ol>
+
+<h3 id="Get-started"><a href="#Get-started" class="headerlink" title="Get started"></a>Get started</h3><p>There is a <a href="https://github.com/csscomb/core-template" target="_blank" rel="noopener">tiny template</a>
+I’ve made to help you get started.<br>
+The postprocessor is called Flip Comb and all it does is replace comments in CSS
+files with <code>/<em> (╯°□°）╯︵ ┻━┻ </em>/</code>.<br>
+It took me 15 minutes to write those two files.<br>
+The result is pretty useless, but you can learn something from it.</p>
+<p>Just fork the repo and play around.<br>
+When you are ready to go further,
+<a href="https://github.com/csscomb/core" target="_blank" rel="noopener">read docs</a> for more
+information.<br>
+Have fun!</p>
+</article><footer class="footer"><p>Feel free to drop me a line <a href="mailto:tonyganch+tg.com@gmail.com">by mail</a>.</p></footer></div></body></html>

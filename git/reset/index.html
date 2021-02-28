@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Tony Ganch</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/syntax.css"><link rel="stylesheet" href="/main.css"><link rel="shortcut icon" href="http://github.com/favicon.ico"><meta name="generator" content="Hexo 5.4.0"></head><body><div class="content"><article class="post"><h2>git reset: повернуть время вспять</h2><p>Самые страшные команды в гите: <code>git reset --hard</code> и <code>git push --force</code>.<br>Особенно если выполнены случайно, друг за другом и в репозитории, с которым
+работает ещё пара десятков человек.<br>Как быстро исправить ситуацию?<br>Сделать <code>git reset</code>.</p>
+<h3 id="Волшебная-формула"><a href="#Волшебная-формула" class="headerlink" title="Волшебная формула"></a>Волшебная формула</h3><p>Команда на все случаи, когда нужно что-то отменить:</p>
+<pre><code>$ git reset --hard &lt;commit&gt;
+</code></pre><p><code>&lt;commit&gt;</code> в данном случае — та точка, к которой нужно откатиться.</p>
+<p>Гит — лапочка и записывает абсолютно всё, что делает: новые коммиты, переключения
+между ветками, переписывание истории.<br>Всё, что вам нужно — научиться читать логи.</p>
+<h3 id="Отменить-git-push-force"><a href="#Отменить-git-push-force" class="headerlink" title="Отменить git push --force"></a>Отменить <code>git push --force</code></h3><p>Если вы сделали форс-пуш и быстро поняли, что сделали его не туда, ситуацию
+легко поправить.<br>Главное — не паниковать.    </p>
+<pre><code>$ git push --force origin master
+
+Counting objects: 3, done.
+...
+a1a1a1..b2b2b2 master -&gt; master
+</code></pre><p>Последняя строка говорит, что до пуша последний коммит в удалённом мастере был
+<code>a1a1a1</code>, а после пуша последним коммитом стал <code>b2b2b2</code>.<br>Вооружённые этим знанием, делаем <code>reset</code> и ещё один форс-пуш, на этот раз
+возвращая предыдущее состояние ветки:</p>
+<pre><code>$ git reset --hard a1a1a1
+$ git push origin +master
+</code></pre><p class="note">
+<code><code>git push -f origin master</code></code> и <code><code>git push origin +master</code></code> —
+одно и то же.
+</p>
+
+<p>Если провернуть всё быстро, никто ничего не заметит.</p>
+<h3 id="Отменить-git-reset-hard"><a href="#Отменить-git-reset-hard" class="headerlink" title="Отменить git reset --hard"></a>Отменить <code>git reset --hard</code></h3><p class="note">
+Этот трюк сработает только для закоммиченных изменений.
+</p>
+
+<p>Бывает, что пара последних коммитов в ветке — лишние.<br>Вы делаете <code>git reset --hard HEAD~3</code>, но случайно удаляете 1 лишний коммит.<br>На сервер ещё ничего не запушено, сделать <code>git pull</code> неоткуда.<br>Что делать?<br>Открываем reflog:</p>
+<pre><code>$ git reflog
+
+c3c3c3 HEAD@{0} reset: moving to HEAD~3
+b2b2b2 HEAD@{1} commit: Clean up
+a1a1a1 HEAD@{2} commit (amend): Fix #42
+...
+</code></pre><p>Ваша задача — найти в этом логе тот пункт, к которому вы хотите вернуться.<br>В нашем случае мы хотим отменить последнее действие, то есть вернуться ко второй
+строке.<br>Делаем хитрый <code>reset</code>:</p>
+<pre><code>$ git reset --hard HEAD@{1}
+
+HEAD is now at b2b2b2 Clean up
+</code></pre><p>Вуаля, неудачного <code>reset --hard</code> как не бывало.<br>Что же мы сделали?    </p>
+<p><code>git reset --hard HEAD@{1}</code> буквально значит: «Хэй, гит, покажи мне файлы в том
+виде, в каком они были 1 действие назад».<br>Обратите внимание, что под действием имеется в виду запись в рефлоге.
+Например, если вы сделаете <code>git reset -i HEAD~6</code>, в зависимости от того, что вы
+натворите во время рибейза, в логе может появиться хоть 20 новых записей.<br>И каждую из них можно использовать для <code>reset</code>.</p>
+<p>Вместо <code>HEAD@{1}</code> можно использовать более замысловатые указания, например:</p>
+<pre><code>$ git reset --hard master@{one.week.ago}
+</code></pre><p>Этой командой мы просим показать мастер недельной давности.<br>О том, как ещё можно указать нужный коммит, <a href="http://git-scm.com/docs/gitrevisions.html" target="_blank" rel="noopener">читайте в
+документации</a>.</p>
+<h3 id="Отменить-git-rebase-i"><a href="#Отменить-git-rebase-i" class="headerlink" title="Отменить git rebase -i"></a>Отменить <code>git rebase -i</code></h3><p>По тому же принципу можно отменить и недавний <code>rebase</code>:</p>
+<pre><code>$ git reflog
+
+c3c3c3 HEAD@{1}: rebase -i (finish): returning to refs/heads/branch
+b2b2b2 HEAD@{2}: rebase -i (pick): Add cool method
+a1a1a1 HEAD@{3}: checkout: moving from branch to a1a1a1
+a1a1a1 HEAD@{4}: commit (amend): Add cool method
+...
+</code></pre><p>Ищем коммит перед чекаутом и откатываемся:</p>
+<pre><code>$ git reset --hard HEAD@{4}
+</code></pre></article><footer class="footer"><p>Feel free to drop me a line <a href="mailto:tonyganch+tg.com@gmail.com">by mail</a>.</p></footer></div></body></html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Tony Ganch</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/syntax.css"><link rel="stylesheet" href="/main.css"><link rel="shortcut icon" href="http://github.com/favicon.ico"><meta name="generator" content="Hexo 5.4.0"></head><body><div class="content"><article class="post"><h2>CSScomb Core: постпроцессор за 15 мин</h2><a class="header" href="/csscomb/csscomb-core">This post in English</a><p class="note">
+<strong>TL;DR</strong><br>
+Как написать постпроцессор, потратив минимум времени?<br>
+Форкнуть <a href="https://github.com/csscomb/core-template" title="Flip Comb" target="_blank" rel="noopener">
+специальный шаблон</a> и изменить его под свои нужды.
+</p>
+
+<p>JS-версии проекта <a href="https://github.com/csscomb/csscomb.js" target="_blank" rel="noopener">CSScomb</a> этим летом
+исполняется год.<br>За это время <a href="https://github.com/csscomb/csscomb.js/graphs/contributors" target="_blank" rel="noopener">мы</a>
+сделали прекрасный инструмент, который легко поддерживать и
+расширять.<br>И сегодня я хочу поделиться с вами лучшей частью нашей работы.</p>
+<h3 id="CSScomb-Core"><a href="#CSScomb-Core" class="headerlink" title="CSScomb Core"></a>CSScomb Core</h3><p>Ядро проекта теперь доступно в виде отдельного модуля —
+<a href="https://github.com/csscomb/core" target="_blank" rel="noopener">CSScomb Core</a>.<br>На его основе вы быстро напишете любой постпроцессор.<br>А чтобы показать, как это просто, я сделала шаблон —
+<a href="https://github.com/csscomb/core-template" target="_blank" rel="noopener">Flip Comb</a>, который легко форкнуть и
+изменить.</p>
+<h3 id="Что-под-капотом"><a href="#Что-под-капотом" class="headerlink" title="Что под капотом"></a>Что под капотом</h3><ol>
+<li>
+<p><b>Парсер с поддержкой препроцессоров</b></p>
+<p>
+В основе CSScomb Core лежит
+<a href="https://github.com/tonyganch/gonzales-pe" title="Gonzales PE" target="_blank" rel="noopener">
+Gonzales PE</a>.<br>
+Этот парсер умеет работать не только с CSS, но и препроцессорными языками:
+LESS, Sass и SCSS.<br>
+</p></li>
+
+<li>
+<p><b>Работа с конфигами</b></p>
+<p>
+Иногда постпроцессорам нужны настройки.<br>
+В CSScomb, например, их <a href="https://github.com/csscomb/csscomb.js/tree/dev/lib/options" target="_blank" rel="noopener">25</a>.<br>
+При этом пользователь может сам указать, какие именно ему нужны.<br>
+Для этого используются <a href="https://github.com/csscomb/csscomb.js/blob/dev/config/csscomb.json" title="csscomb.json" target="_blank" rel="noopener">файлы конфигураций</a>.<br>
+Работать с ними проще простого:
+<pre><code>var config = require(‘path/to/config.json’);
+core.configure(config);</code></pre>
+</p></li>
+
+<li>
+<p><b>Модульность</b></p>
+<p>
+Каждая опция — это плагин.<br>
+Чтобы добавить плагин, его файл достаточно положить в общую папку
+(<a href="https://github.com/csscomb/core-template/blob/master/lib/flip-comb.js#L9" target="_blank" rel="noopener">как это сделано в Flip Comb</a>)
+или подключить парой строк:
+<pre><code>var option = require(‘path/to/option’);
+core.use(option);</code></pre>
+</p>
+</li>
+
+<li>
+<p><b>Работа с файлами и директориями</b></p>
+<p>
+Обрабатывать строки, файлы или целые директории — вы сами решаете, что
+удобнее.<br>
+Работу с файловой системой и определением синтаксиса мы забрали на себя:
+<pre><code>core.processString(string, syntax);
+core.processFile(‘path/to/file.css’);
+core.processDirectory(‘path/to/dir’);</code></pre>
+</p></li></ol>
+
+<h3 id="Как-начать"><a href="#Как-начать" class="headerlink" title="Как начать"></a>Как начать</h3><p>Чтобы вам было проще начать, я сделала
+<a href="https://github.com/csscomb/core-template" target="_blank" rel="noopener">маленький шаблон</a>.<br>Постпроцессор называется Flip Comb, и всё, что он делает — заменяет комментарии
+в CSS-файлах на <code>/<em> (╯°□°）╯︵ ┻━┻ </em>/</code>.<br>На написание двух файлов у меня ушло 15 минут.<br>Результат бесполезный, но для образовательных целей — самое то.</p>
+<p>Форкните репозиторий и поиграйте с кодом.<br>А когда почувствуете, что примера уже мало,
+<a href="https://github.com/csscomb/core" target="_blank" rel="noopener">открывайте документацию</a>.<br>Там много интересного.<br>Have fun!</p>
+</article><footer class="footer"><p>Feel free to drop me a line <a href="mailto:tonyganch+tg.com@gmail.com">by mail</a>.</p></footer></div></body></html>

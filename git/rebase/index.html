@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Tony Ganch</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/syntax.css"><link rel="stylesheet" href="/main.css"><link rel="shortcut icon" href="http://github.com/favicon.ico"><meta name="generator" content="Hexo 5.4.0"></head><body><div class="content"><article class="post"><h2>git rebase: порядок в локальных ветках</h2><p>Самый частый вопрос, с которым я сталкиваюсь в разговорах про git:
+«Зачем нужен rebase и как им пользоваться?»</p>
+<p>Основная задача rebase — наведение порядка.<br>Если вы часто делаете коммиты-фиксы, а потом ужасаетесь, какой бардак
+творится в ветке — эта команда станет вашей любимой.</p>
+<p class="note note_warning">
+<strong>Важно!</strong> Rebase стоит делать, <strong>только</strong> если вы ещё не запушили свои изменения
+в удалённую ветку.<br>
+Эта операция переписывает SHA (id) коммитов, поэтому другие пользователи
+не смогут так просто спулить ваши правки.
+</p>
+
+<p>Давайте посмотрим, как можно «причесать» историю.</p>
+<h3 id="Изменить-сообщение-к-коммиту"><a href="#Изменить-сообщение-к-коммиту" class="headerlink" title="Изменить сообщение к коммиту"></a>Изменить сообщение к коммиту</h3><figure>
+    <img src="/images/git-rebase-1.png">
+    <figcaption>True story. Женя, привет!</figcaption>
+</figure>
+
+
+<p>Сообщения к коммитам ничем не отличаются от комментариев в коде.<br>Когда через полгода–год вам понадобится разобраться в своей (или чужой)
+работе, хорошие объяснения здорово сэкономят время.</p>
+<p>Проблема в том, что иногда нам некогда писать подробные комментарии.<br>А иногда мы к тому же делаем опечатки.<br>Если перед мёрджем/отправкой пулл-реквеста у вас нашлась минутка,
+помогите будущему себе и коллегам-разработчикам — поправьте свои сообщения.</p>
+<p>Допустим, у нас есть репозиторий Х с такой историей:</p>
+<pre><code>$ git log -5 --pretty=%s --graph
+
+* Ipdate docs
+* Fix
+* Add simple benchmarks
+* Fix some bug
+* New spinner
+</code></pre><p>Изменить комментарий к последнему коммиту можно с помощью <code>amend</code>:</p>
+<pre><code>$ git commit --amend -m &apos;Update docs&apos;
+</code></pre><p>Если же поправить нужно не самый последний коммит
+(или сразу несколько), нам поможет <code>reword</code>.</p>
+<p>Для начала определимся, какие коммиты нужно отредактировать.<br>В нашем случае это первый, второй и четвёртый.<br>Просим гит начать rebase, взяв за основу последние 4 коммита:</p>
+<pre><code>$ git rebase -i HEAD~4
+</code></pre><p class="note">
+О различиях между <code>HEAD~</code> и <code>HEAD^</code> можно прочитать на <a href="http://git-scm.com/book/ru/%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B-Git-%D0%92%D1%8B%D0%B1%D0%BE%D1%80-%D1%80%D0%B5%D0%B2%D0%B8%D0%B7%D0%B8%D0%B8#Ссылки-на-предков" target="_blank" rel="noopener">git-scm.com</a>.
+</p>
+
+<p>В ответ на это откроется текстовый редактор:</p>
+<pre><code>pick Fix some bug
+pick Add simple benchmarks
+pick Fix
+pick Ipdate docs
+</code></pre><p>Обратите внимание на обратный порядок: сверху идут старые коммиты,
+снизу — свежие.<br>Заменяем у нужных коммитов <code>pick</code> на <code>r</code> или <code>reword</code>:</p>
+<pre><code>r Fix some bug
+pick Add simple benchmarks
+r Fix
+r Ipdate docs
+</code></pre><p>И поочерёдно правим каждое сообщение.</p>
+<p>В итоге получим такую историю:</p>
+<pre><code>$ git log -5 --pretty=%s --graph
+
+* Update docs
+* Fix #42: Notifications in IE
+* Add simple benchmarks
+* Fix #132: URL parser
+* New spinner
+</code></pre><h3 id="Удалить-ненужный-коммит"><a href="#Удалить-ненужный-коммит" class="headerlink" title="Удалить ненужный коммит"></a>Удалить ненужный коммит</h3><p>Бывает, что вы сделали какую-то работу, но она становится не нужна.<br>Или вы хотите вынести пару коммитов, сделанных неделю назад,
+в отдельную ветку, а из текущей удалить.</p>
+<p>Последние N коммитов легко убрать с помощью <code>reset</code>.<br>Например, удалить последний коммит:</p>
+<pre><code>$ git reset --hard HEAD~
+</code></pre><p>Удалить последние 7:</p>
+<pre><code>$ git reset --hard HEAD~6
+</code></pre><p>Если же нужный коммит затесался между другими, запускаем <code>rebase</code>:</p>
+<pre><code>$ git rebase -i HEAD~3
+
+pick Add simple benchmarks
+pick Fix #42: Notifications in IE
+pick Update docs
+</code></pre><p>И просто удаляем ненужную строчку (для нашего примера возьмём самую верхнюю):</p>
+<pre><code>pick Fix #132: one more try
+pick Update docs</code></pre>
+
+<pre><code>$ git log --pretty=%s --graph
+
+* Update docs
+* Fix #42: Notifications in IE
+* Fix #132: URL parser
+* New spinner
+</code></pre><h3 id="Объединить-несколько-коммитов-в-один"><a href="#Объединить-несколько-коммитов-в-один" class="headerlink" title="Объединить несколько коммитов в один"></a>Объединить несколько коммитов в один</h3><p><blockquote class="twitter-tweet" align="center"><p>I need a script which, when I am making a Git commit, will automatically use the previous commit’s message, suffixed with with “for real.”</p>&mdash; Jeff Croft (@jcroft) <a href="https://twitter.com/jcroft/statuses/348164862351929344" target="_blank" rel="noopener">June 21, 2013</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Наверняка у вас бывало такое:</p>
+<pre><code>$ git log --pretty=%s --graph
+
+* WTF #4
+* Another fix for #9
+* One more fix for #4
+* Fixed #9
+* Finally fixed #4
+* Fixed #4
+</code></pre><p>Вроде поправили баг, но нашлось что-то новое.<br>И ещё раз.<br>И опять.</p>
+<p>С одной стороны, можно оставить всё как есть.<br>С другой, если вам когда-нибудь понадобится откатить изменения,
+откатывать придётся всю пачку коммитов вместо одного.<br>Да и история выглядит не очень аккуратно.</p>
+<p><code>git commit --amend</code> — хорошая команда, но подходит
+только для обновления последнего коммита.<br><code>rebase</code>, в свою очередь, умеет объединять несколько коммитов,
+даже если они не следуют друг за другом по порядку.</p>
+<p>Например, сделать из 6 коммитов 2 довольно просто.<br>Запускаем <code>rebase</code>:</p>
+<pre><code>$ git rebase -i HEAD~6
+
+pick Fixed #4
+pick Finally fixed #4
+pick Fixed #9
+pick One more fix for #4
+pick Another fix for #9
+pick WTF #4
+</code></pre><p>В гите есть два вида слияния: <code>fixup</code> и <code>squash</code>.<br>Разница между ними в том, что <code>squash</code> склеивает все комментарии
+в один, а <code>fixup</code> использует только комментарий основного коммита (того, в
+который вливаются остальные).</p>
+<p>Если вы попросите гит смёрджить коммит, по умолчанию он вольёт его в предыдущий.<br>Так как нас это не устраивает, сначала поменяем очерёдность коммитов.<br>Для этого просто меняем строчки местами:</p>
+<pre><code>pick Fixed #4
+pick Finally fixed #4
+pick One more fix for #4
+pick WTF #4
+pick Fixed #9
+pick Another fix for #9
+</code></pre><p>Следующее действие похоже на переименование: мы заменяем <code>pick</code> на <code>f</code>
+(<code>fixup</code>) или <code>s</code> (<code>squash</code>), в зависимости от нужного результата.</p>
+<pre><code>pick Fixed #4
+f Finally fixed #4
+f One more fix for #4
+f WTF #4
+pick Fixed #9
+s Another fix for #9
+</code></pre><p>Если вы выбрали <code>squash</code>, гит даст вам ещё одну возможность
+отредактировать сообщение для итогового коммита.</p>
+<p>В результате получаем красивую историю:</p>
+<pre><code>$ git log --pretty=%s --graph
+
+* Fixed #9
+* Fixed #4
+</code></pre><h3 id="Автоматизировать-слияние"><a href="#Автоматизировать-слияние" class="headerlink" title="Автоматизировать слияние"></a>Автоматизировать слияние</h3><p>Процесс объединения можно упростить.<br>Допустим, ваша история сейчас состоит из двух коммитов:</p>
+<pre><code>$ git log --pretty=%s --graph
+
+* Fixed #9
+* Fixed #4
+</code></pre><p>Вы поправили пару файлов и хотите влить эти изменения в коммит <code>Fixed #4</code>.<br>Чтобы не заниматься ручной перестановкой, можно сделать так:</p>
+<pre><code>$ git commit --fixup=123456
+</code></pre><p><code>123456</code> в данном случае = SHA коммита, в который мы хотим влить изменения.    </p>
+<p>Гит создаст коммит с сообщением <code>fixup! Fixed #4</code>.<br>Сделаем ещё несколько изменений, но на этот раз подготовим коммит для сквоша:</p>
+<pre><code>$ git commit --squash=567890
+</code></pre><p>Если всё готово, запускаем rebase:</p>
+<pre><code>$ git rebase -i --autosquash HEAD~4
+
+pick Fixed #4
+fixup fixup! Fixed #4
+pick Fixed #9
+squash squash! Fixed #9
+</code></pre><p>Смотрите: гит самостоятельно расставил все коммиты в нужном порядке и заодно
+заменил флаг <code>pick</code> на нужный.</p>
+<p>История получится такая же чистая:</p>
+<pre><code>$ git log --pretty=%s --graph
+
+* Fixed #9
+* Fixed #4
+</code></pre><h3 id="Разделить-один-коммит-на-несколько"><a href="#Разделить-один-коммит-на-несколько" class="headerlink" title="Разделить один коммит на несколько"></a>Разделить один коммит на несколько</h3><p>Противоположная предыдущей ситуация: вы сделали кучу изменений,
+закрыли 8 тасков, но накидали это всё в 2 коммита:</p>
+<pre><code>$ git log --pretty=%s --graph
+
+* Update tests, fix #6, #7, #8
+* Fix #1, #2, #3, #4, #5
+</code></pre><p>Откатить их в случае необходимости будет сложно — слишком много зависимостей.<br>Да и ревьюеру кода не позавидуешь.<br>Решение простое: разделяем коммиты на логические части:</p>
+<pre><code>$ git rebase -i HEAD~2
+
+pick Fix #1, #2, #3, #4, #5
+pick Update tests, fix #6, #7, #8
+</code></pre><p>Отмечаем коммит, который хотим разбить, словом <code>edit</code>:</p>
+<pre><code>edit Fix #1, #2, #3, #4, #5
+pick Update tests, fix #6, #7, #8
+</code></pre><p>Гит откатится к коммиту <code>Fix #1...</code> и остановится.<br>Далее у нас полная свобода действий.<br>Отменяем коммит:</p>
+<pre><code>$ git reset HEAD~
+</code></pre><p>Выборочно добавляем файлы, связанные с первым таском:</p>
+<pre><code>$ git add ./task-1-file.txt
+</code></pre><p>Делаем первый коммит:</p>
+<pre><code>$ git commit -m &apos;Fix #1: Update docs&apos;
+</code></pre><p>Повторяем по вкусу:</p>
+<pre><code>$ git add ./task-2-file.txt
+$ git commit -m &apos;Fix #2: New notification system&apos;
+...
+</code></pre><p>Когда результат нас удовлетворит, возобновляем rebase:</p>
+<pre><code>$ git rebase --continue
+</code></pre><p>Повторив эти шаги несколько раз, можно получить в меру подробную историю:</p>
+<pre><code>$ git log --pretty=%s --graph
+
+* Update tests
+* Fix #9
+* Fix #8
+* Fix #7
+...
+</code></pre><h3 id="Заключение"><a href="#Заключение" class="headerlink" title="Заключение"></a>Заключение</h3><p>Rebase — чудесный и мощный инструмент.<br>Главное — не бояться.<br>Описанные выше приёмы помогут вам сделать историю понятной,
+а поиск по ней лёгким.<br>Попробуйте применить их перед следующим пушем.</p>
+</article><footer class="footer"><p>Feel free to drop me a line <a href="mailto:tonyganch+tg.com@gmail.com">by mail</a>.</p></footer></div></body></html>
